@@ -1,0 +1,663 @@
+{
+	"info": {
+		"_postman_id": "b75c6c9d-9404-4f23-8b82-921ae93a10cf",
+		"name": "JobCafe",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19282282"
+	},
+	"item": [
+		{
+			"name": "Board Tests",
+			"item": [
+				{
+					"name": "Positive Tests",
+					"item": [
+						{
+							"name": "Get different parameters",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code test\"), function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"  \r",
+											"};\r",
+											"pm.test(\"Boars name text\", function(){\r",
+											"    pm.expect(pm.response.text()).to.include(\"Toronto\")\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://api.jobka.net:8081/jobs?location=Toronto&data=2022-06-03&key={{key}}&token={{token}} &company=Apple",
+									"protocol": "http",
+									"host": [
+										"api",
+										"jobka",
+										"net"
+									],
+									"port": "8081",
+									"path": [
+										"jobs"
+									],
+									"query": [
+										{
+											"key": "location",
+											"value": "Toronto"
+										},
+										{
+											"key": "position",
+											"value": "QA",
+											"disabled": true
+										},
+										{
+											"key": "data",
+											"value": "2022-06-03"
+										},
+										{
+											"key": "key",
+											"value": "{{key}}"
+										},
+										{
+											"key": "token",
+											"value": "{{token}} "
+										},
+										{
+											"key": "company",
+											"value": "Apple"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get location test",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code test\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"\r",
+											"\r",
+											"});\r",
+											"pm.test(\"Boars name text\", function(){\r",
+											"    pm.expect(pm.response.text()).to.include(\"Toronto\");\r",
+											"\r",
+											"\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://api.jobka.net:8081/jobs?location=Toronto&key={{key}}",
+									"protocol": "http",
+									"host": [
+										"api",
+										"jobka",
+										"net"
+									],
+									"port": "8081",
+									"path": [
+										"jobs"
+									],
+									"query": [
+										{
+											"key": "location",
+											"value": "Toronto"
+										},
+										{
+											"key": "position",
+											"value": "QA",
+											"disabled": true
+										},
+										{
+											"key": "data",
+											"value": "2022-06-03",
+											"disabled": true
+										},
+										{
+											"key": "key",
+											"value": "{{key}}"
+										},
+										{
+											"key": "token",
+											"value": "{{token}} ",
+											"disabled": true
+										},
+										{
+											"key": "company",
+											"value": "Apple",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get position test",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code test\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"\r",
+											"\r",
+											"});\r",
+											"pm.test(\"Boars name text\", function(){\r",
+											"    pm.expect(pm.response.text()).to.include(\"QA\");\r",
+											"\r",
+											"\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://api.jobka.net:8081/jobs?position=QA",
+									"protocol": "http",
+									"host": [
+										"api",
+										"jobka",
+										"net"
+									],
+									"port": "8081",
+									"path": [
+										"jobs"
+									],
+									"query": [
+										{
+											"key": "location",
+											"value": "Toronto",
+											"disabled": true
+										},
+										{
+											"key": "position",
+											"value": "QA"
+										},
+										{
+											"key": "data",
+											"value": "2022-06-03",
+											"disabled": true
+										},
+										{
+											"key": "key",
+											"value": "{{key}}",
+											"disabled": true
+										},
+										{
+											"key": "token",
+											"value": "{{token}} ",
+											"disabled": true
+										},
+										{
+											"key": "company",
+											"value": "Apple",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get company test",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code test\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"\r",
+											"\r",
+											"});\r",
+											"pm.test(\"Boars name text\", function(){\r",
+											"    pm.expect(pm.response.text()).to.include(\"Apple\");\r",
+											"\r",
+											"\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://api.jobka.net:8081/jobs?company=Apple",
+									"protocol": "http",
+									"host": [
+										"api",
+										"jobka",
+										"net"
+									],
+									"port": "8081",
+									"path": [
+										"jobs"
+									],
+									"query": [
+										{
+											"key": "location",
+											"value": "Toronto",
+											"disabled": true
+										},
+										{
+											"key": "position",
+											"value": "QA",
+											"disabled": true
+										},
+										{
+											"key": "data",
+											"value": "2022-06-03",
+											"disabled": true
+										},
+										{
+											"key": "key",
+											"value": "{{key}}",
+											"disabled": true
+										},
+										{
+											"key": "token",
+											"value": "{{token}} ",
+											"disabled": true
+										},
+										{
+											"key": "company",
+											"value": "Apple"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get data test",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code test\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"\r",
+											"\r",
+											"});\r",
+											"pm.test(\"Boars name text\", function(){\r",
+											"    pm.expect(pm.response.text()).to.include(\"2022-06-04\");\r",
+											"\r",
+											"\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://api.jobka.net:8081/jobs?data=2022-06-04",
+									"protocol": "http",
+									"host": [
+										"api",
+										"jobka",
+										"net"
+									],
+									"port": "8081",
+									"path": [
+										"jobs"
+									],
+									"query": [
+										{
+											"key": "location",
+											"value": "Toronto",
+											"disabled": true
+										},
+										{
+											"key": "position",
+											"value": "QA",
+											"disabled": true
+										},
+										{
+											"key": "data",
+											"value": "2022-06-04"
+										},
+										{
+											"key": "key",
+											"value": "{{key}}",
+											"disabled": true
+										},
+										{
+											"key": "token",
+											"value": "{{token}} ",
+											"disabled": true
+										},
+										{
+											"key": "company",
+											"value": "Apple",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Negative Tests",
+					"item": [
+						{
+							"name": "Get  wrong company test",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code test\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"\r",
+											"\r",
+											"});\r",
+											"pm.test(\"Boars name text\", function(){\r",
+											"    pm.expect(pm.response.text()).to.include(\"Appdle\");\r",
+											"\r",
+											"\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://api.jobka.net:8081/jobs?key={{key}}&token={{token}} &company=Apple",
+									"protocol": "http",
+									"host": [
+										"api",
+										"jobka",
+										"net"
+									],
+									"port": "8081",
+									"path": [
+										"jobs"
+									],
+									"query": [
+										{
+											"key": "location",
+											"value": "Toronto",
+											"disabled": true
+										},
+										{
+											"key": "position",
+											"value": "QA",
+											"disabled": true
+										},
+										{
+											"key": "data",
+											"value": "2022-06-03",
+											"disabled": true
+										},
+										{
+											"key": "key",
+											"value": "{{key}}"
+										},
+										{
+											"key": "token",
+											"value": "{{token}} "
+										},
+										{
+											"key": "company",
+											"value": "Apple"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get wrong location test",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code test\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"\r",
+											"});\r",
+											"pm.test(\"Boars name text\", function(){\r",
+											"    pm.expect(pm.response.text()).to.include(\"Torodnto\");\r",
+											"\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://api.jobka.net:8081/jobs?location=Toronto&key={{key}}&token={{token}} ",
+									"protocol": "http",
+									"host": [
+										"api",
+										"jobka",
+										"net"
+									],
+									"port": "8081",
+									"path": [
+										"jobs"
+									],
+									"query": [
+										{
+											"key": "location",
+											"value": "Toronto"
+										},
+										{
+											"key": "position",
+											"value": "QA",
+											"disabled": true
+										},
+										{
+											"key": "data",
+											"value": "2022-06-03",
+											"disabled": true
+										},
+										{
+											"key": "key",
+											"value": "{{key}}"
+										},
+										{
+											"key": "token",
+											"value": "{{token}} "
+										},
+										{
+											"key": "company",
+											"value": "Apple",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get  wrong position test",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code test\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"\r",
+											"\r",
+											"});\r",
+											"pm.test(\"Boars name text\", function(){\r",
+											"    pm.expect(pm.response.text()).to.include(\"QweA\");\r",
+											"\r",
+											"\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://api.jobka.net:8081/jobs?position=QA&key={{key}}&token={{token}} ",
+									"protocol": "http",
+									"host": [
+										"api",
+										"jobka",
+										"net"
+									],
+									"port": "8081",
+									"path": [
+										"jobs"
+									],
+									"query": [
+										{
+											"key": "location",
+											"value": "Toronto",
+											"disabled": true
+										},
+										{
+											"key": "position",
+											"value": "QA"
+										},
+										{
+											"key": "data",
+											"value": "2022-06-03",
+											"disabled": true
+										},
+										{
+											"key": "key",
+											"value": "{{key}}"
+										},
+										{
+											"key": "token",
+											"value": "{{token}} "
+										},
+										{
+											"key": "company",
+											"value": "Apple",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get wrong data test",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code test\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"\r",
+											"\r",
+											"});\r",
+											"pm.test(\"Boars name text\", function(){\r",
+											"    pm.expect(pm.response.text()).to.include(\"20222-06-04\");\r",
+											"\r",
+											"\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://api.jobka.net:8081/jobs?data=2022-06-04&key={{key}}&token={{token}} ",
+									"protocol": "http",
+									"host": [
+										"api",
+										"jobka",
+										"net"
+									],
+									"port": "8081",
+									"path": [
+										"jobs"
+									],
+									"query": [
+										{
+											"key": "location",
+											"value": "Toronto",
+											"disabled": true
+										},
+										{
+											"key": "position",
+											"value": "QA",
+											"disabled": true
+										},
+										{
+											"key": "data",
+											"value": "2022-06-04"
+										},
+										{
+											"key": "key",
+											"value": "{{key}}"
+										},
+										{
+											"key": "token",
+											"value": "{{token}} "
+										},
+										{
+											"key": "company",
+											"value": "Apple",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
